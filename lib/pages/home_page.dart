@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'lessons.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -307,6 +309,78 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
+                    const SizedBox(width: 30,),
+                    Column(
+                      children: [
+                        Stack(
+                          alignment: Alignment.bottomCenter,
+                          children: [
+                            Container(
+                              width: 100,
+                              height: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.black,
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(bottom: 20.0),
+                              child: Text("MUSIC",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold
+                                ),
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(bottom: 70.0),
+                              child: Image(
+                                image: AssetImage("lib/images/music.png"),
+                                width: 60,
+                                height: 60,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                    const SizedBox(width: 30,),
+                    Column(
+                      children: [
+                        Stack(
+                          alignment: Alignment.bottomCenter,
+                          children: [
+                            Container(
+                              width: 100,
+                              height: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.green,
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(bottom: 20.0),
+                              child: Text("SPORT",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold
+                                ),
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(bottom: 70.0),
+                              child: Image(
+                                image: AssetImage("lib/images/sport.png"),
+                                width: 60,
+                                height: 60,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -342,34 +416,47 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               const SizedBox(height: 30,),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 30.0),
-                    child: Image.asset("lib/images/math.png",
-                    width: 80,),
+              MaterialButton(
+                onPressed: (){
+                  Navigator.push(context,
+                  MaterialPageRoute(
+                      builder: (context) => Lessons()));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.grey[200],
                   ),
-                  const SizedBox(width: 15,),
-                  Column(
+                  child: Row(
                     children: [
-                      Text("Fundamental Math",
-                        style: TextStyle(
-                            color: Colors.lightBlue[900],
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold
-                        ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30.0),
+                        child: Image.asset("lib/images/math.png",
+                        width: 80,),
                       ),
-                      const SizedBox(height: 10,),
-                      const Text("9 Lessons, 10 Hours",
-                        style: TextStyle(
-                            color: Colors.teal,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold
-                        ),
+                      const SizedBox(width: 15,),
+                      Column(
+                        children: [
+                          Text("Fundamental Math",
+                            style: TextStyle(
+                                color: Colors.lightBlue[900],
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold
+                            ),
+                          ),
+                          const SizedBox(height: 10,),
+                          const Text("9 Lessons, 10 Hours",
+                            style: TextStyle(
+                                color: Colors.teal,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                ],
+                ),
               ),
             ],
           ),
